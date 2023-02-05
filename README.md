@@ -7,7 +7,7 @@
 
 > Easy to handle the async await without try catch
 
-[![IT Man - Tech #32 - Async await wrapper for easy error handling without try-catch [Vietnamese]](https://i.ytimg.com/vi/iLB75jzQrJ8/mqdefault.jpg)](https://www.youtube.com/watch?v=iLB75jzQrJ8)
+[![IT Man - Tech #32 - Async await wrapper for easy error handling without try-catch [Vietnamese]](https://i.ytimg.com/vi/iLB75jzQrJ8/hqdefault.jpg)](https://www.youtube.com/watch?v=iLB75jzQrJ8)
 
 ## Prerequisites
 
@@ -25,8 +25,42 @@ bun install
 
 ## Usage
 
+This is simple usage for await-to-js with Bun.
+
+```typescript
+// index.ts
+import { to } from "await-to-js";
+
+interface ServerResponse {
+  test: number;
+}
+
+const p = Promise.resolve({ test: 123 });
+const pError = Promise.reject(new Error("Test error"));
+
+const [err, data] = await to<ServerResponse>(p);
+if (err) console.error(err);
+console.log(data?.test);
+// Output: 123
+
+const [err2] = await to<ServerResponse>(pError);
+if (err2) console.error(err2);
+
+// Output: Error: Test error
+```
+
 ```sh
-bun run index.ts
+❯ bun run index.ts
+123
+3 | interface ServerResponse {
+4 |   test: number;
+5 | }
+6 |
+7 | const p = Promise.resolve({ test: 123 });
+8 | const pError = Promise.reject(new Error("Test error"));
+                                 ^
+error: Test error
+      at /Users/huynhducdung/Projects/research/better-async/index.ts:8:30
 ```
 
 ## Author
