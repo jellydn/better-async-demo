@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "bun-types": "0.8.1",
-    "tsx": "3.12.9"
+    "tsx": "3.12.10"
   },
   "dependencies": {
     "await-to-js": "3.0.0"
