@@ -6,7 +6,7 @@
     "dev": "tsx index.ts"
   },
   "devDependencies": {
-    "bun-types": "1.1.44",
+    "bun-types": "1.1.45",
     "tsx": "4.19.2"
   },
   "dependencies": {
