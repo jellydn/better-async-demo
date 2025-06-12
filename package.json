@@ -6,8 +6,8 @@
     "dev": "tsx index.ts"
   },
   "devDependencies": {
-    "bun-types": "1.2.15",
-    "tsx": "4.20.1"
+    "bun-types": "1.2.16",
+    "tsx": "4.20.2"
   },
   "dependencies": {
     "await-to-js": "3.0.0"
